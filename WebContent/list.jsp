@@ -28,7 +28,7 @@
 				<td>${i.name }</td>
 				<td>${i.register }</td>
 				<td>수정</td>
-				<td>삭제</td>
+				<td><a href="delete.do?num=${i.num }">삭제</a></td>
 			</tr>
 		</c:forEach>
 	</table>

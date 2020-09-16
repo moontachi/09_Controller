@@ -104,6 +104,27 @@ public class MemberDao {
 		}
 		return lists;
 	}
+	
+	public int deleteData(String num) {
+		String sql = "delete from member where num = ?";
+		int cnt = -1;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			
+			cnt = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt != null)
+					pstmt.close();
+			}catch(SQLException e) {
+
+			}
+		}
+		return cnt;
+	}
 }
 
 

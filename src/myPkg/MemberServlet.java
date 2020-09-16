@@ -82,6 +82,10 @@ public class MemberServlet extends HttpServlet {
 			viewPage = "list.jsp";
 		}
 		else if(command.equals("/delete.do")) {
+			System.out.println("/delete.do¡¢±Ÿ");
+			mcommand = new MDeleteCommand(); 
+			mcommand.excute(request, response);
+			viewPage = "/list.do";
 			
 		}
 		else if(command.equals("/updateForm.do")) {
